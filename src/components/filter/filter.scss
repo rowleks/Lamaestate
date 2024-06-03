@@ -1,0 +1,60 @@
+@import "../../responsive.scss";
+
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    // margin-top: 1rem;
+    gap: 10px;
+    
+    
+    h2 {
+        font-weight: 300;
+        font-size: 1.2rem;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+    label {
+        font-size: .7rem;
+    }
+
+    input, select {
+        width: 90px;
+        padding: .7rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        font-size: .7rem;
+    }
+
+
+    }
+
+    .top {
+        input {
+            width: 100%;
+        }
+    }
+
+    .bottom {
+        display: flex;
+       justify-content: space-between;
+       gap: .5rem;
+       flex-wrap: wrap;
+
+       button {
+        padding: .5rem 1rem;
+        border: none;
+        cursor: pointer;
+        background-color: #fece51;
+
+        img {
+            width: 24px;
+        }
+       }
+    }
+    
+}
