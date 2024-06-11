@@ -1,10 +1,7 @@
 
-import { Homepage, Listpage, Layout, Detailpage } from "./pages";
+import { Homepage, Listpage, Layout, Detailpage, Profilepage } from "./pages";
 
-import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 
 function App() {
@@ -25,6 +22,10 @@ function App() {
       {
         path: "list/:id",
         element: <Detailpage />
+      },
+      {
+        path: "profile",
+        element: <Profilepage />
       }
     ]
     }

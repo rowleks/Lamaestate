@@ -21,10 +21,13 @@
 
     .details {
         flex: 3;
-        margin-right: 2rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;
+
+        @include md {
+            margin-right: 2rem;
+        }
 
         .lower {
             display: flex;
@@ -71,6 +74,7 @@
         display: flex;
         flex-direction: column;
         gap: 2.5rem;
+        padding-bottom: 1em;
 
         p, span {
             font-size: .9rem;

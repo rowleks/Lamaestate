@@ -1,11 +1,17 @@
-import React, { useState} from 'react'
+import React, { useCallback, useState} from 'react'
 import "./navbar.scss"
 import { Link } from "react-router-dom"
 
-const Navbar = () => {
+const Navbar = React.memo(({user, logUser}) => {
 
 
 const [toggle, setToggle] = useState(false)
+
+const handleLog = () => {
+  setToggle(!toggle)
+  logUser
+
+}
 
 
   return (
@@ -13,10 +19,10 @@ const [toggle, setToggle] = useState(false)
     <nav>
       <div className="left-nav">
  
-        <a href='/' className='logo'>
-          <img src="/logo.png" alt='logo' />
+        <Link className='logo' to="/">
+          <img src="/logo.png" alt='logo' width={40} height={40} />
           <span>LamaEstate</span>
-        </a>
+        </Link>
 
         <Link className='menu-items' to='/'>Home</Link>
         <Link className='menu-items' to='/list'>Listings</Link>
@@ -27,25 +33,45 @@ const [toggle, setToggle] = useState(false)
 
       <div className="right-nav">
 
-        <a href='/'>Sign In</a>
-        <a href='/' className='register'>Sign Up</a>
+        { user ?
+         (<div className='user'>
+          <img src="/favicon.png" alt="" />
+          <span className='username'>John Doe</span>
+          <Link onClick={logUser} className='register logout'>Log out</Link>
+
+        </div>) : 
+          ( <><Link onClick={logUser}>Sign In</Link>
+         <Link className='register'>Sign Up</Link>
+        </>)
+
+        }
+
 
         <div className="menu-icon">
           <img src='/menu.png' alt='menu icon' onClick={() => setToggle(!toggle)} />
         </div>
 
         <div className={toggle ? "ham-menu active" : "ham-menu"}>
-          <Link to='/'>Home</Link>
-          <Link to='/list'>Listings</Link>
-          <Link to='/'>Contacts</Link>
-          <Link to='/'>Agents</Link>
-          <Link to='/'>Sign In</Link>
-          <Link to='/'>Sign Up</Link>
+          <Link to='/' 
+          onClick={() => setToggle(!toggle)}>Home</Link>
+          <Link to='/list' 
+          onClick={() => setToggle(!toggle)}>Listings</Link>
+          <Link to='/' 
+          onClick={() => setToggle(!toggle)}>Contacts</Link>
+          <Link to='/' 
+          onClick={() => setToggle(!toggle)}>Agents</Link>
+          { user ? (<Link to='/' 
+          onClick={() => {setToggle(!toggle); logUser();} }>Logout</Link>) : 
+          (<><Link to='/' 
+            onClick={() => {setToggle(!toggle); logUser();}}>Sign In</Link>
+            <Link to='/' 
+            onClick={() => setToggle(!toggle)}>Sign Up</Link>
+          </>)}
         </div>
 
       </div>     
     </nav>
   )
-}
+})
 
 export default Navbar
