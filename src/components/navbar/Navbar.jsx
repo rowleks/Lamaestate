@@ -25,7 +25,7 @@ const handleLog = () => {
         </Link>
 
         <Link className='menu-items' to='/'>Home</Link>
-        <Link className='menu-items' to='/list'>Listings</Link>
+        <Link className='menu-items' to='/listings'>Listings</Link>
         <Link className='menu-items' to='/'>Contacts</Link>
         <Link  className='menu-items' to='/'>Agents</Link>
 
@@ -54,7 +54,7 @@ const handleLog = () => {
         <div className={toggle ? "ham-menu active" : "ham-menu"}>
           <Link to='/' 
           onClick={() => setToggle(!toggle)}>Home</Link>
-          <Link to='/list' 
+          <Link to='/listings' 
           onClick={() => setToggle(!toggle)}>Listings</Link>
           <Link to='/' 
           onClick={() => setToggle(!toggle)}>Contacts</Link>

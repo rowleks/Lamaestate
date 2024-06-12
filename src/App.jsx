@@ -16,7 +16,7 @@ function App() {
         element: <Homepage /> 
       },
       {
-        path: "list",
+        path: "listings",
         element: <Listpage />
       }, 
       {
