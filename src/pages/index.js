@@ -10,3 +10,7 @@ export { default as Layout } from "./layout/Layout"
 export { default as Login } from "./login/Login"
 
 export { default as Profilepage } from "./profilepage/Profilepage"
+
+export { default as Signuppage } from "./signuppage/Signuppage"
+
+export { default as Signinpage } from "./signinpage/Signinpage"

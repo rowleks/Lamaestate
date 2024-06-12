@@ -1,5 +1,5 @@
 
-import { Homepage, Listpage, Layout, Detailpage, Profilepage } from "./pages";
+import { Homepage, Listpage, Layout, Detailpage, Profilepage, Signuppage, Signinpage } from "./pages";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
@@ -26,6 +26,14 @@ function App() {
       {
         path: "profile",
         element: <Profilepage />
+      },
+      {
+        path: "signup",
+        element: <Signuppage />
+      },
+      {
+        path: "signin",
+        element: <Signinpage />
       }
     ]
     }

@@ -40,8 +40,8 @@ const handleLog = () => {
           <Link onClick={logUser} className='register logout'>Log out</Link>
 
         </div>) : 
-          ( <><Link onClick={logUser}>Sign In</Link>
-         <Link className='register'>Sign Up</Link>
+          ( <><Link to="/signin">Sign In</Link>
+         <Link className='register' to="/signup">Sign Up</Link>
         </>)
 
         }
@@ -62,9 +62,9 @@ const handleLog = () => {
           onClick={() => setToggle(!toggle)}>Agents</Link>
           { user ? (<Link to='/' 
           onClick={() => {setToggle(!toggle); logUser();} }>Logout</Link>) : 
-          (<><Link to='/' 
-            onClick={() => {setToggle(!toggle); logUser();}}>Sign In</Link>
-            <Link to='/' 
+          (<><Link 
+            onClick={() => {setToggle(!toggle)}} to="/signin">Sign In</Link>
+            <Link to='/signup' 
             onClick={() => setToggle(!toggle)}>Sign Up</Link>
           </>)}
         </div>

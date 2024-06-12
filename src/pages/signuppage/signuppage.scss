@@ -1,0 +1,68 @@
+@import "../../responsive.scss";
+
+
+.signuppage {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include sm {
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    .signup-container {
+        flex: 3;
+        margin-right: 2rem;
+
+        @include md {
+
+            margin-top: -4em;
+        }
+
+        .form-data {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            margin-top: 4em;
+
+
+
+            input {
+                padding: 1em;
+                font-family: Lato;
+
+                }
+                    .submit-btn {
+                        background-color: #FECE51;
+                        border: none;
+                        cursor: pointer;
+                    }
+        }
+    
+}
+
+.image-container {
+    flex: 2;
+    background-color: #FCF5F3;
+    height: 100%;
+    display: none;
+    align-items: center;
+
+    @include md {
+        display: flex;
+    }
+
+    img {
+        width: 115%;
+        display: none;
+        
+
+        @include md {
+            display: flex;
+            margin-left: -1.5rem;
+        }
+    }
+}
+}
