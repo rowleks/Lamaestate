@@ -17,13 +17,13 @@ function Card({item}) {
   return (
     <div className='card'>
 
-      <Link to={`/list/${item.id}`} className='image-container'>
+      <Link to={`/listings/${item.id}`} className='image-container'>
       <img src={item.img} alt='house' />  
       </Link>
 
       <div className="text-container">
         <h2 className='title'>
-          <Link to={`/list/${item.id}`}>
+          <Link to={`/listings/${item.id}`}>
             {item.title}
           </Link>
 

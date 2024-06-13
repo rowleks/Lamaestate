@@ -40,6 +40,12 @@ nav {
         .menu-items {
             display: none;
 
+            &.active {
+                text-decoration: underline #FECE51;
+                text-underline-offset: 10px;
+                text-decoration-thickness: 2px;
+            }
+
             @include sm {
                 display: flex;
             }

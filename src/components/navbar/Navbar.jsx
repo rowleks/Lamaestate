@@ -1,6 +1,6 @@
 import React, { useCallback, useState} from 'react'
 import "./navbar.scss"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 const Navbar = React.memo(({user, logUser}) => {
 
@@ -24,10 +24,13 @@ const handleLog = () => {
           <span>LamaEstate</span>
         </Link>
 
-        <Link className='menu-items' to='/'>Home</Link>
-        <Link className='menu-items' to='/listings'>Listings</Link>
-        <Link className='menu-items' to='/'>Contacts</Link>
-        <Link  className='menu-items' to='/'>Agents</Link>
+        <NavLink className={({ isActive }) => (isActive ? 'menu-items active' : 'menu-items')} to='/'>Home</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'menu-items active' : 'menu-items')}
+         to='/listings'>Listings</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'menu-items' : 'menu-items')}
+         to=''>Contacts</NavLink>
+        <NavLink  className={({ isActive }) => (isActive ? 'menu-item' : 'menu-items')} 
+        to=''>Agents</NavLink>
 
       </div>
 

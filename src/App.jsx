@@ -20,7 +20,7 @@ function App() {
         element: <Listpage />
       }, 
       {
-        path: "list/:id",
+        path: "listings/:id",
         element: <Detailpage />
       },
       {
